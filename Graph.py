@@ -1,5 +1,4 @@
 import subprocess
-from datetime import datetime
 
 # List of specific dates for commits (YYYY-MM-DD)
 commit_dates = [
@@ -12,7 +11,7 @@ commit_dates = [
     "2024-04-22",
     "2024-04-23",
     "2024-04-24",
-    "2024-04-25",  # Corrected from "2024-0-25"
+    "2024-04-25",  # Corrected date
     "2024-02-11",
     "2024-02-12",
     "2024-02-13",
@@ -43,6 +42,6 @@ for commit_date in commit_dates:
         f.write(f"Commit on {commit_date}\n")
     create_backdated_commit("Backdated commit for", commit_date)
 
-# Push all commits
-subprocess.run('git push -u origin main --force', shell=True, check=True)
+# Push all commits to master
+subprocess.run('git push -u origin master --force', shell=True, check=True)
 print("All commits have been pushed to the remote repository.")
